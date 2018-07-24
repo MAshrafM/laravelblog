@@ -3,6 +3,7 @@
 @section('content')
   <h1 class="text-center">Posts Index</h1>
   <hr>
+  <div class="container">
   @forelse($posts as $post)
     <div class="card text-white bg-primary mb-12">
       <div class="card-header">{{$post->subject}}</div>
@@ -14,5 +15,6 @@
   @empty
     <h2 class="text-center"> No Posts Yet!</h2>
   @endforelse
+    </div>
 @endsection
 

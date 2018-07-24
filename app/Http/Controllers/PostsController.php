@@ -16,12 +16,21 @@ class PostsController extends Controller
   
   // create
   public function create() {
-    
+    return view('posts.new');
   }
   
   // store
   public function store(Request $request){
+    $this->validate($request, [
+      'subject' => 'required',
+      'body' => 'required'
+    ]);
     
+    $post = new Post;
+    $post->subject = $request->input('subject');
+    $post->body = $request->input('body');
+    $post->save();
+    return redirect('/posts')->with('success', 'Done Successfully');
   }
   
   // show
