@@ -24,6 +24,9 @@
               width: 100vw;
               overflow-x: hidden;
             }
+            main{
+              margin: 15px 0;
+            }
             .full-height {
                 height: 100vh;
             }
@@ -49,6 +52,13 @@
             #carousel-intro img{
               height: 600px;
               max-height: 600px;
+            }
+            .card-header a {
+              color: #fff;
+            }
+            .card-header a:hover {
+              color: #fff;
+              text-decoration: none;
             }
         </style>
         <!-- Scripts -->

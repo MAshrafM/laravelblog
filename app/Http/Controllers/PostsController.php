@@ -35,7 +35,8 @@ class PostsController extends Controller
   
   // show
   public function show($id){
-    
+    $post = Post::find($id);
+    return view('posts.show')->with('post', $post);
   }
   
   // edit
@@ -60,6 +61,8 @@ class PostsController extends Controller
   
   // destroy
   public function destroy($id){
-    
+    $post = Post::find($id);
+    $post->delete();
+    return redirect('/posts')->with('success', 'Done Successfully');
   }
 }
