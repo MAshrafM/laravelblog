@@ -40,12 +40,22 @@ class PostsController extends Controller
   
   // edit
   public function edit($id){
-    
+    $post = Post::find($id);
+    return view('posts.edit')->with('post', $post);
   }
   
   // update
-  public function update(Request $request){
+  public function update(Request $request, $id){
+    $this->validate($request, [
+      'subject' => 'required',
+      'body' => 'required'
+    ]);
     
+    $post = Post::find($id);
+    $post->subject = $request->input('subject');
+    $post->body = $request->input('body');
+    $post->save();
+    return redirect('/posts')->with('success', 'Done Successfully');
   }
   
   // destroy
