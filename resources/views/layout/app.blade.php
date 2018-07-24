@@ -63,6 +63,8 @@
         </style>
         <!-- Scripts -->
         <script src={{asset('js/app.js')}} type="text/javascript"></script>
+        
+        <script src={{asset('js/unisharp/laravel-ckeditor/ckeditor.js')}} type="text/javascript"></script>
     </head>
     <body>
       @include('layout.navbar')
@@ -72,6 +74,8 @@
       </main>
       @include('layout.footer')
       
-      
+      <script>
+        CKEDITOR.replace( 'article-ckeditor' );
+    </script>
     </body>
 </html>

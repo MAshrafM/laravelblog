@@ -9,7 +9,7 @@
       <div class="card-header"><a href="posts/{{$post->id}}">{{$post->subject}}</a></div>
       <div class="card-body">
         <h4 class="card-title">Created at: {{$post->created_at}}</h4>
-        <p class="card-text">{{$post->body}}</p>
+        <p class="card-text">{!! $post->body !!}</p>
       </div>
       <div class="card-footer text-muted">
         <span class="float-right"><a href="posts/{{$post->id}}/edit" class="btn btn-info">Edit</a></span>
