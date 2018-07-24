@@ -1,6 +1,11 @@
 @extends('layout.app')
 
 @section('content')
+<style>
+.del-form {
+  display: inline-block;
+}
+</style>
   <h1 class="text-center">{{$post->subject}}</h1>
   <hr>
   <div class="container">
@@ -10,9 +15,12 @@
         <p class="card-text">{!! $post->body !!}</p>
       </div>
       <div class="card-footer text-muted">
-        <span class="float-right"><a href="./{{$post->id}}/edit" class="btn btn-info">Edit</a>
-        <a href="posts/{{$post->id}}" class="btn btn-danger">Delete</a>
-        </span>
+        <a href="./{{$post->id}}/edit" class="btn btn-info float-right">Edit</a>
+        
+        {!! Form::open(['action' => ['PostsController@destroy', $post->id], 'method' => 'POST', 'class' => 'del-form float-right mr-3'] ) !!}
+          {{ Form::hidden('_method', 'DELETE') }}
+          {{ Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+        {!! Form::close() !!}
       </div>
     </div>
   </div>
