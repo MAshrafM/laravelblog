@@ -5,7 +5,7 @@
   <hr>
   <div class="container">
   @forelse($posts as $post)
-    <div class="card text-white bg-primary mb-12">
+    <div class="card text-white bg-primary mb-3">
       <div class="card-header"><a href="posts/{{$post->id}}">{{$post->subject}}</a></div>
       <div class="card-body">
         <h4 class="card-title">Created at: {{$post->created_at}}</h4>
@@ -16,9 +16,10 @@
       </div>
     </div>
   @empty
-    <h2 class="text-center"> No Posts Yet!</h2>
+    <div class="card text-white bg-primary mb-12">
+    <div class="card-header"> No Posts Yet!</div>
+    </dic>
   @endforelse
-    
     {{$posts->links()}}
     </div>
 @endsection

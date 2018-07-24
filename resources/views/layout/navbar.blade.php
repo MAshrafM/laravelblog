@@ -10,8 +10,12 @@
         <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
         <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
         <li class="nav-item"><a class="nav-link" href="/posts">Posts</a></li>
-        <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
       </ul>
+      
+      <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+        <li class="nav-item"><a class="nav-link" href="/posts/create">New Post</a><li>
+        <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+      <ul>
     </div>
   </div>
 </nav>
