@@ -19,15 +19,11 @@
               color: #636b6f;
               font-family: 'Raleway', sans-serif;
               height: 100vh;
+              font-weight: 600;
               margin: 0;
               width: 100vw;
               overflow-x: hidden;
             }
-            main {
-                margin-top: 60px;
-                color: #636b6f;
-            }
-
             .full-height {
                 height: 100vh;
             }
@@ -50,7 +46,13 @@
                 font-size: 84px;
                 font-weight: 800;
             }
+            #carousel-intro img{
+              height: 600px;
+              max-height: 600px;
+            }
         </style>
+        <!-- Scripts -->
+        <script src={{asset('js/app.js')}} type="text/javascript"></script>
     </head>
     <body>
       @include('layout.navbar')
@@ -58,5 +60,7 @@
         @yield('content')
       </main>
       @include('layout.footer')
+      
+      
     </body>
 </html>
