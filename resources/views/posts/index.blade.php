@@ -18,6 +18,8 @@
   @empty
     <h2 class="text-center"> No Posts Yet!</h2>
   @endforelse
+    
+    {{$posts->links()}}
     </div>
 @endsection
 

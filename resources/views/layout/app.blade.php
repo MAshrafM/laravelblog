@@ -66,6 +66,7 @@
     </head>
     <body>
       @include('layout.navbar')
+      @include('layout.messages')
       <main>
         @yield('content')
       </main>
