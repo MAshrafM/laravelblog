@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layouts.app')
 
 @section('content')
 <style>
@@ -14,6 +14,7 @@
         <h4 class="card-title">Created at: {{$post->created_at}}</h4>
         <p class="card-text">{!! $post->body !!}</p>
       </div>
+      @if(Auth::user()->id == $post->uid)
       <div class="card-footer text-muted">
         <a href="./{{$post->id}}/edit" class="btn btn-info float-right">Edit</a>
         
@@ -22,6 +23,7 @@
           {{ Form::submit('Delete', ['class' => 'btn btn-danger'])}}
         {!! Form::close() !!}
       </div>
+      @endif
     </div>
   </div>
 @endsection

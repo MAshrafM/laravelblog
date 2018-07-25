@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layouts.app')
 
 @section('content')
   <h1 class="text-center">Posts Index</h1>
@@ -8,11 +8,14 @@
     <div class="card text-white bg-primary mb-3">
       <div class="card-header"><a href="posts/{{$post->id}}">{{$post->subject}}</a></div>
       <div class="card-body">
-        <h4 class="card-title">Created at: {{$post->created_at}}</h4>
+        <h5 class="card-title">Created at: {{$post->created_at->format('Y.m.d')}} By: {{$post->user->name}}</h5>
         <p class="card-text">{!! $post->body !!}</p>
       </div>
       <div class="card-footer text-muted">
-        <span class="float-right"><a href="posts/{{$post->id}}/edit" class="btn btn-info">Edit</a></span>
+        @if(Auth::user()->id == $post->uid)
+          <span class="float-right"><a href="posts/{{$post->id}}/edit" class="btn btn-info">Edit</a></span>
+        @endif
+        <span class="float-right"><a href="posts/{{$post->id}}" class="btn btn-info mr-1">More</a></span>
       </div>
     </div>
   @empty

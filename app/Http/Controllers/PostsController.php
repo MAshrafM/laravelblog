@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Storage;
 
 class PostsController extends Controller
 {
+  
+  public function __construct(){
+    $this->middleware('auth', ['except' => ['index', 'show']] );
+  }
   // Index
   public function index() {
     $posts = Post::orderBy('created_at', 'desc')->paginate(4);
@@ -29,6 +33,7 @@ class PostsController extends Controller
     $post = new Post;
     $post->subject = $request->input('subject');
     $post->body = $request->input('body');
+    $post->uid = auth()->user()->id;
     $post->save();
     return redirect('/posts')->with('success', 'Done Successfully');
   }
@@ -42,6 +47,9 @@ class PostsController extends Controller
   // edit
   public function edit($id){
     $post = Post::find($id);
+    if(auth()->user()->id !== $post->uid){
+      redirect('/posts')->with('error', 'Your are not authorized to edit this post');
+    }
     return view('posts.edit')->with('post', $post);
   }
   
@@ -62,6 +70,9 @@ class PostsController extends Controller
   // destroy
   public function destroy($id){
     $post = Post::find($id);
+    if(auth()->user()->id !== $post->uid){
+      redirect('/posts')->with('error', 'Your are not authorized to delete this post');
+    }
     $post->delete();
     return redirect('/posts')->with('success', 'Done Successfully');
   }
