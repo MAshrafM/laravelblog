@@ -20,51 +20,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="https://bootswatch.com/4/united/bootstrap.min.css" rel="stylesheet" type="text/css"> 
-        <style>
-            html, body{
-              background-color: #fff;
-              color: #636b6f;
-              font-family: 'Raleway', sans-serif;
-              height: 100vh;
-              font-weight: 600;
-              margin: 0;
-              width: 100vw;
-              overflow-x: hidden;
-            }
-            .full-height {
-                height: 100vh;
-            }
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-                font-weight: 800;
-            }
-            #carousel-intro img{
-              height: 600px;
-              max-height: 600px;
-            }
-            .card-header a {
-              color: #fff;
-            }
-            .card-header a:hover {
-              color: #fff;
-              text-decoration: none;
-            }
-        </style>
 </head>
 <body>
     @include('layouts.navbar')

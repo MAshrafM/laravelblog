@@ -25,7 +25,7 @@
         <div class="card-header">{{$post->subject}}</div>
         <div class="card-body" style="overflow: hidden;">
           <h5 class="card-title">Created at: {{$post->created_at->format('Y.m.d')}} By: {{$post->user->name}}</h5>
-          <p class="card-text">{!! $post->body !!}</p>
+          <p class="card-text text-truncate">{!! $post->body !!}</p>
         </div>
         <div class="card-footer text-muted">
           <span class="float-right"><a href="posts/{{$post->id}}/edit" class="btn btn-info">Edit</a></span>

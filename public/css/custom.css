@@ -1,0 +1,82 @@
+html, body{
+  background-color: #fff;
+  color: #636b6f;
+  font-family: 'Raleway', sans-serif;
+  height: 100vh;
+  font-weight: 600;
+  margin: 0;
+  width: 100vw;
+  overflow-x: hidden;
+}
+.full-height {
+    height: 100vh;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.content {
+    text-align: center;
+}
+
+.title {
+    font-size: 84px;
+    font-weight: 800;
+}
+
+#hero {
+  margin-top: -1rem;
+}
+#carousel-intro img{
+  height: 600px;
+  max-height: 600px;
+}
+.auth-img{
+  max-height: 50px;
+}
+#Latest .media{
+  display: inline-block;
+  text-align: center;
+}
+#Latest .media-cont{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.subscribe > .caption {font-size:1.125em; font-weight:normal; color:#3e4e5c;}
+.subscribe > .summary {font-size:.875em; color:#8e9ea9; margin-bottom:.5em;}
+ .subscribe > .email {
+  width:83%;
+  font-size:.875em;
+  border:.1em solid #e4ebec;
+  appearance:none;
+  line-height: 2.9em;
+  padding:0 1em;
+}
+ .subscribe > .email + button {
+  width:17%;
+  font-size:.875em;
+  border:0;
+  appearance:none;
+  line-height:3em;
+  padding:0 1em;
+  text-align:center;
+  text-transform:uppercase;
+  color:#fff;
+  cursor:pointer;
+  margin-left:-.4em;
+}
+.card-header a {
+  color: #fff;
+}
+.card-header a:hover {
+  color: #fff;
+  text-decoration: none;
+}
