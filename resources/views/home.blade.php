@@ -22,6 +22,7 @@
     <div class="card-deck">
     @forelse($posts as $post) 
       <div class="card border-light my-3" style="max-height: 600px; ">
+        <img class="card-img-top" src="storage/post_thumb/{{$post->thumb}}" alt="Card image cap">
         <div class="card-header">{{$post->subject}}</div>
         <div class="card-body" style="overflow: hidden;">
           <h5 class="card-title">Created at: {{$post->created_at->format('Y.m.d')}} By: {{$post->user->name}}</h5>

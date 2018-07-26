@@ -3,7 +3,7 @@
 @section('content')
   <h1 class="text-center">Create Post</h1>
   <hr>
-  {!! Form::open(['action' => 'PostsController@store', 'methode' => 'POST']) !!}
+  {!! Form::open(['action' => 'PostsController@store', 'methode' => 'POST', 'enctype'=>'multipart/form-data']) !!}
   
   <div class="container">
     <div class="form-group">
@@ -13,6 +13,10 @@
     <div class="form-group">
     {{Form::label('body', 'Body')}}
     {{Form::textarea('body', '', ['id' => 'article-ckeditor', 'class'=>'form-control'])}}
+    </div>
+    <div class="form-group">
+    {{Form::label('thumb', 'Thumbnail')}}
+    {{Form::file('thumb', [ 'class'=>'form-control'])}}
     </div>
     <div class="form-group">
     {{Form::submit('Create', ['class'=>'btn btn-primary btn-lg'])}}
